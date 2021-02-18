@@ -91,7 +91,7 @@ h4 {
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 20px; /* Specified height */
+  height: 5px; /* Specified height */
   background: rgb(233, 173, 233);
   /* background: #d3d3d3; Grey background */
   outline: none; /* Remove outline */
@@ -107,20 +107,20 @@ h4 {
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
+  border-radius: 30px;
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
+  width: 10px; /* Set a specific slider handle width */
   background: purple;
-  height: 20px; /* Slider handle height */
+  height: 10px; /* Slider handle height */
   /* background: #4CAF50; Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+/* .slider::-moz-range-thumb {
+  width: 25px; 
+  height: 25px; 
   background: purple;
 
-  /* background: #4CAF50; Green background */
-  cursor: pointer; /* Cursor on hover */
-}
+  cursor: pointer; 
+} */
