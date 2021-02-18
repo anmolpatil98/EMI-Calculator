@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EMI Calculator</title>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-
     <link rel="stylesheet" href="emi.css" />
   </head>
   <body>
@@ -18,88 +13,75 @@
     <div class="container">
       <div class="calculation">
         <h2>Calculation</h2>
-
-        <form action="">
-          <div class="enitity">
-            <h3>Principle Amount</h3>
+        <div class="enitity">
+          <h3>Principle Amount</h3>
+          <input
+            type="number"
+            id="principle"
+            value="10000"
+            onchange="updateSlider()"
+          />
+          <div class="slidecontainer">
             <input
-              type="number"
-              id="principle"
+              type="range"
+              min="10000"
+              max="1000000"
               value="10000"
-              onchange="updateSlider()"
+              class="slider"
+              id="principle-slider"
+              onchange="updateValue()"
             />
-            <div class="slidecontainer">
-              <input
-                type="range"
-                min="10000"
-                max="1000000"
-                value="10000"
-                class="slider"
-                id="principle-slider"
-                onchange="updateValue()"
-              />
-            </div>
           </div>
+        </div>
 
-          <div class="enitity">
-            <h3>Rate of Interest</h3>
+        <div class="enitity">
+          <h3>Rate of Interest</h3>
+          <input type="number" id="rate" value="10" onchange="updateSlider()" />
+          <div class="slidecontainer">
             <input
-              type="number"
-              id="rate"
+              type="range"
+              min="0"
+              max="30"
               value="10"
-              onchange="updateSlider()"
+              class="slider"
+              id="rate-slider"
+              onchange="updateValue()"
             />
-            <div class="slidecontainer">
-              <input
-                type="range"
-                min="0"
-                max="30"
-                value="10"
-                class="slider"
-                id="rate-slider"
-                onchange="updateValue()"
-              />
-            </div>
           </div>
+        </div>
 
-          <div class="enitity">
-            <h3>Time(in years)</h3>
+        <div class="enitity">
+          <h3>Time(in years)</h3>
+          <input type="number" id="time" value="1" onchange="updateSlider()" />
+          <div class="slidecontainer">
             <input
-              type="number"
-              id="time"
-              value="1"
-              onchange="updateSlider()"
+              type="range"
+              min="1"
+              max="30"
+              value="10"
+              class="slider"
+              id="time-slider"
+              onchange="updateValue()"
             />
-            <div class="slidecontainer">
-              <input
-                type="range"
-                min="1"
-                max="30"
-                value="10"
-                class="slider"
-                id="time-slider"
-                onchange="updateValue()"
-              />
-            </div>
           </div>
-
-          <div class="button">
-            <button class="btn" id="find">Find EMI</button>
-          </div>
-        </form>
+        </div>
+        <div class="button">
+          <button class="btn" id="find">Find EMI</button>
+        </div>
       </div>
 
       <div class="results">
         <h2>Result</h2>
         <h4>Monthly EMI: <span class="emi" id="emi"></span></h4>
         <h4>
-          Interest Payable:
-          <span class="totalInterest" id="totalInterest"></span>
+          Interest Payable:<span
+            class="totalInterest"
+            id="totalInterest"
+          ></span>
         </h4>
         <h4>
           Total Amount: <span class="totalAmount" id="totalAmount"></span>
         </h4>
-
         <div class="chart">
           <canvas
             id="myChart"

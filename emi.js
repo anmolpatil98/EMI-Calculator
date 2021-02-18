@@ -83,6 +83,5 @@ const updateSlider = () => {
 const findbtn = document.querySelector("#find");
 findbtn.addEventListener("click", (e) => {
   e.preventDefault(); //prevents page from reloading
-
   updatepie();
 });
